@@ -516,6 +516,53 @@
       font-weight: 600;
     }
 
+    .press-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .press-link {
+      display: block;
+      padding: 22px 24px;
+      border-radius: 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(250,246,238,0.94));
+      border: 1px solid rgba(17, 87, 181, 0.1);
+      box-shadow: 0 16px 40px rgba(10, 24, 52, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .press-link:hover,
+    .press-link:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 44px rgba(10, 24, 52, 0.12);
+      border-color: rgba(17, 87, 181, 0.28);
+      outline: none;
+    }
+
+    .press-source {
+      display: inline-flex;
+      margin-bottom: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue-deep);
+      background: rgba(17, 87, 181, 0.08);
+    }
+
+    .press-link h3 {
+      margin-bottom: 8px;
+      font-size: clamp(24px, 3vw, 34px);
+      color: var(--ink);
+    }
+
+    .press-link p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
     .cta {
       padding-bottom: 42px;
     }
@@ -608,7 +655,26 @@
       .hero-shell { min-height: auto; }
       .hero-shell::before { width: 520px; height: 210px; right: -150px; }
       .hero-shell::after { width: 560px; height: 200px; right: -170px; }
-      .gallery-stage { min-height: 520px; }
+      .gallery-stage {
+        min-height: 680px;
+        border-radius: 28px;
+      }
+      .gallery-slide {
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) auto;
+      }
+      .gallery-slide img {
+        height: 100%;
+        padding: 16px 16px 0;
+      }
+      .gallery-overlay {
+        position: relative;
+        padding: 20px 20px 22px;
+        background: linear-gradient(180deg, rgba(7, 17, 36, 0.92) 0%, rgba(7, 17, 36, 0.98) 100%);
+      }
+      .gallery-overlay h3 {
+        font-size: clamp(24px, 8vw, 34px);
+      }
       .gallery-overlay p { max-width: 36ch; }
     }
   </style>
@@ -963,6 +1029,35 @@
               leaders, builders, organizers, innovators, and communities carrying the country forward.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">News coverage</div>
+          <h2>See how the trek was covered.</h2>
+        </div>
+
+        <div class="press-list">
+          <a class="press-link" href="https://www.cdto-campus.com/en/news/cdto-campus-hosted-the-first-delegation-of-ukraine-trek-2025-by-harvard-kennedy-school-and-mit-students-and-alumni" target="_blank" rel="noreferrer">
+            <div class="press-source">CDTO Campus</div>
+            <h3>CDTO Campus hosted the first delegation of Ukraine Trek 2025.</h3>
+            <p>Coverage of the trek's visit and exchange with Harvard Kennedy School and MIT students and alumni.</p>
+          </a>
+
+          <a class="press-link" href="https://www.snakeisland.org/activities/6903423663b661d7162befa2" target="_blank" rel="noreferrer">
+            <div class="press-source">Snake Island Institute</div>
+            <h3>Snake Island Institute featured the trek's work in Ukraine.</h3>
+            <p>An external look at the delegation's engagement with Ukrainian institutions, ideas, and civic life.</p>
+          </a>
+
+          <a class="press-link" href="https://www.bostonglobe.com/2025/11/07/opinion/ukraine-russia-war-harvard-mit-trip/" target="_blank" rel="noreferrer">
+            <div class="press-source">The Boston Globe</div>
+            <h3>A Boston Globe perspective on why the Harvard-MIT trip mattered.</h3>
+            <p>Opinion coverage connecting the trek to the broader stakes of Ukraine, Russia, and the international response.</p>
+          </a>
         </div>
       </div>
     </section>
