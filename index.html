@@ -403,10 +403,7 @@
     }
 
     .gallery-shell {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 18px;
-      align-items: stretch;
+      display: block;
     }
 
     .gallery-stage {
@@ -476,41 +473,6 @@
 
     .gallery-controls {
       display: none;
-    }
-
-    .gallery-side {
-      display: grid;
-      gap: 14px;
-      align-content: start;
-    }
-
-    .gallery-intro {
-      padding: 24px;
-      border-radius: 30px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(250,246,238,0.92));
-      box-shadow: 0 16px 40px rgba(10, 24, 52, 0.08);
-    }
-
-    .gallery-intro p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .gallery-meta {
-      display: flex;
-      gap: 12px;
-      margin-top: 18px;
-      flex-wrap: wrap;
-    }
-
-    .gallery-pill {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(17, 87, 181, 0.08);
-      border: 1px solid rgba(17, 87, 181, 0.12);
-      font-size: 14px;
-      color: var(--muted);
     }
 
     .safety {
@@ -589,6 +551,44 @@
       border: 1px solid rgba(255,255,255,0.14);
     }
 
+    .closing {
+      padding: 8px 0 46px;
+    }
+
+    .closing-band {
+      display: grid;
+      justify-items: center;
+      gap: 18px;
+      padding: 34px 24px 38px;
+      border-radius: 34px;
+      color: white;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.16), transparent 36%),
+        linear-gradient(180deg, rgba(17, 87, 181, 0.98) 0%, rgba(10, 47, 104, 0.98) 52%, rgba(240, 197, 51, 0.98) 100%);
+      box-shadow: 0 20px 54px rgba(10, 24, 52, 0.16);
+    }
+
+    .trident {
+      width: min(120px, 24vw);
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 12px 26px rgba(10, 24, 52, 0.24));
+    }
+
+    .closing h2 {
+      font-size: clamp(42px, 8vw, 96px);
+      color: white;
+    }
+
+    .closing p {
+      margin: 0;
+      max-width: 34ch;
+      font-size: 18px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.88);
+    }
+
     .footer {
       padding: 0 0 26px;
       font-size: 14px;
@@ -596,7 +596,7 @@
     }
 
     @media (max-width: 1000px) {
-      .hero-shell, .split, .gallery-shell, .cta-band { grid-template-columns: 1fr; }
+      .hero-shell, .split, .cta-band { grid-template-columns: 1fr; }
       .safety { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
@@ -873,20 +873,6 @@
             </article>
           </div>
 
-          <aside class="gallery-side">
-            <div class="gallery-intro">
-              <div class="eyebrow">Recommended use</div>
-              <p>
-                This format lets every image land properly. Portrait and landscape photos are both shown in full,
-                while the sequence itself feels more like an invitation than a simple gallery.
-              </p>
-              <div class="gallery-meta">
-                <div class="gallery-pill">One image at a time</div>
-                <div class="gallery-pill">Auto-rotates slowly</div>
-                <div class="gallery-pill">Full portrait and landscape view</div>
-              </div>
-            </div>
-          </aside>
         </div>
       </div>
     </section>
@@ -975,6 +961,18 @@
               <a class="button secondary" href="mailto:ukrainetrek.team@gmail.com?subject=Ukraine%20Trek%202026%20Question">Ask a question</a>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <div class="closing-band">
+          <svg class="trident" viewBox="0 0 64 96" aria-hidden="true" role="img">
+            <path fill="#f0c533" d="M30 6h4v16c0 9 3 17 10 23l6-8 8 6-8 13c-2 3-2 7 0 10l8 13-8 6-6-8c-7 6-10 14-10 23v4H30v-4c0-9-3-17-10-23l-6 8-8-6 8-13c2-3 2-7 0-10L6 43l8-6 6 8c7-6 10-14 10-23V6Zm2 29c-3 7-8 13-15 18 4 5 6 12 5 18 4-3 7-6 10-10 3 4 6 7 10 10-1-6 1-13 5-18-7-5-12-11-15-18Z"/>
+          </svg>
+          <h2>Slava Ukraini</h2>
+          <p>Honor to the people, culture, courage, and future that this trek invites participants to encounter firsthand.</p>
         </div>
       </div>
     </section>
