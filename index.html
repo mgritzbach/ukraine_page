@@ -80,6 +80,56 @@
       color: var(--muted);
     }
 
+    .entry {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px 0;
+    }
+
+    .entry-panel {
+      width: min(720px, calc(100% - 24px));
+      padding: clamp(28px, 6vw, 54px);
+      border-radius: 34px;
+      text-align: center;
+      color: white;
+      background:
+        linear-gradient(140deg, rgba(8, 29, 63, 0.94), rgba(17, 87, 181, 0.72)),
+        linear-gradient(180deg, var(--blue) 0 50%, var(--yellow) 50% 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .entry-panel h1 {
+      max-width: none;
+      font-size: clamp(46px, 8vw, 88px);
+      margin-bottom: 14px;
+    }
+
+    .entry-panel p {
+      max-width: 52ch;
+      margin: 0 auto 24px;
+      color: rgba(255,255,255,0.88);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .entry-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .entry-actions .button {
+      min-height: 60px;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+
+    .entry-actions .button.secondary {
+      background: rgba(255,255,255,0.16);
+      border-color: rgba(255,255,255,0.28);
+    }
+
     .hero {
       padding: 16px 0 32px;
     }
@@ -649,6 +699,7 @@
     }
 
     @media (max-width: 760px) {
+      .entry-actions { grid-template-columns: 1fr; }
       .facts, .grid.three, .grid.two, .safety { grid-template-columns: 1fr; }
       .nav-bar { border-radius: 28px; }
       .links { justify-content: flex-start; }
@@ -680,10 +731,24 @@
   </style>
 </head>
 <body>
-  <header class="nav">
+  <section class="entry" aria-labelledby="entry-title">
+    <div class="entry-panel">
+      <div class="kicker">Harvard-MIT Ukraine Trek 2026</div>
+      <h1 id="entry-title">Choose where to begin.</h1>
+      <p>
+        Register your interest now, or continue to the information page to learn more about the trek.
+      </p>
+      <div class="entry-actions">
+        <a class="button primary" href="https://forms.gle/1ZJoWCp7inj9c2VE6">Interest Form</a>
+        <a class="button secondary" href="#info">Info page</a>
+      </div>
+    </div>
+  </section>
+
+  <header class="nav" id="info">
     <div class="wrap">
       <div class="nav-bar">
-        <a class="brand" href="#top">
+        <a class="brand" href="#info">
           <span class="flag" aria-hidden="true"></span>
           <span>Harvard-MIT Ukraine Trek 2026</span>
         </a>
